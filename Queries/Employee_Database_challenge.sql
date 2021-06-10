@@ -21,3 +21,11 @@ SELECT DISTINCT ON (emp_no) emp_no,
 FROM retirement_titles
 ORDER BY emp_no, to_date DESC;
 
+-- Number of titles from the Unique Titles table
+SELECT COUNT(ut.emp_no), ut.title
+INTO title_breakdown
+FROM unique_titles as ut
+GROUP BY ut.title
+ORDER BY COUNT DESC;
+
+
